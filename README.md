@@ -1,69 +1,31 @@
-# Yngliism: React + локальные Markdown-статьи
+# Yngliism — Next.js + React + TypeScript
 
-## Запуск в Windows / VS Code
+Migrated from the supplied Vite/React project. The existing CSS and both Markdown articles are preserved. Articles remain in `articles/ru` and `articles/en`.
 
-Нужен Node.js 22.12+ (или более новая LTS). Открой эту папку в VS Code, затем Terminal → New Terminal:
+## Windows 11 / VS Code
 
-```sh
+Install Node.js 22.12+ (or compatible newer LTS), open this folder in VS Code, then:
+
+```powershell
 npm install
 npm run dev
 ```
 
-Открой адрес, показанный Vite в терминале (обычно http://localhost:5173).
-Live Server для этого проекта не используется. Для остановки нажми Ctrl+C.
+Open http://localhost:3000/ru/ . Live Server is **not** used.
 
-## Переход с прежнего проекта
+## Static deployment (Cloudflare Pages)
 
-Сначала распакуй этот проект в ОТДЕЛЬНУЮ папку и проверь запуск. Исходный проект сохраняй до проверки.
-
-- `articles/ru` и `articles/en`: перенеси сюда свои `.md`, сохранив их содержимое и добавив метаданные по образцу ниже.
-- `css/style.css`: в комплекте сохранён прежний дизайн с дополнениями для Markdown.
-- `index.html`: используй новую версию из комплекта.
-- `src/`: React-компоненты, интерфейс и чтение статей.
-- Старые `js/app.js`, `js/main.js`, `functions/api/articles.js` в этой версии не используются. Удалять их из исходного проекта можно после проверки перехода.
-- Данные D1 этот проект не читает и не удаляет.
-
-В комплекте — полный текст первой статьи из ранее подготовленного файла импорта. Другие статьи из D1 не экспортировались. Свои `earth.md` сохрани: их содержимое в комплект не входит.
-
-## Новая статья
-
-Создай `articles/ru/my-article.md`:
-
-```md
----
-slug: my-article
-title: Название статьи
-description: Краткое описание
-category: teachings
-status: published
-source_url: https://example.com/original
----
-
-## Первый раздел
-
-Текст с **выделением**, [ссылкой](https://example.com) и списком:
-
-- Первый пункт
-- Второй пункт
-
-![Подпись](/images/example.jpg)
-```
-
-Категории: `teachings`, `history`, `articles`. `source_url` необязателен.
-`slug` — латинские строчные буквы, цифры и дефисы. Он должен быть уникальным внутри языка.
-Английский перевод размести в `articles/en` с тем же `slug` и переведёнными полями.
-Новая статья подхватывается автоматически; отдельный список файлов редактировать не нужно.
-Статус `draft` скрывает статью из интерфейса. Это не защита конфиденциального текста: не размещай секреты в исходниках.
-Картинки клади в `public/images`, в Markdown используй `/images/имя-файла.jpg`.
-Поддерживаются обычный Markdown, списки, ссылки, изображения, цитаты и блоки кода; встроенный HTML не исполняется.
-Поиск работает по заголовку, описанию, категории и тексту.
-
-## Сборка
-
-```sh
+```powershell
+npm run typecheck
 npm run build
-npm run preview
 ```
 
-Готовые статические файлы находятся в `dist`. Пока работаем локально: база, SQL и API не нужны.
-Изменение Markdown в режиме разработки обновляет страницу. После будущей публикации для изменения статьи потребуется новая сборка.
+The output directory is `out`. Cloudflare Pages build command: `npm run build`; output directory: `out`. The site is static: Next.js server actions, route handlers and dynamic SSR are not available in this deployment. If moving to a server backend later, change the deployment approach.
+
+## Articles
+
+Add Markdown files to `articles/ru` or `articles/en`. Each file requires YAML frontmatter: `slug`, `title`, `category`, `status: published`. Optional: `description`, `source_url`. Use the same slug for translations. `status: draft` excludes the article from the site. Search covers title, description, category and content.
+
+Routes: `/ru/`, `/en/`, `/ru/articles/`, `/ru/teachings/`, `/ru/timeline/`, `/ru/about/`, `/ru/article/ingliizm-introduction/` (and English equivalents). The root displays language links to `/ru/` and `/en/`.
+
+**Note:** This is a static site: each Markdown update requires a new build/deployment. The legacy Vite files and `node_modules` were intentionally excluded. Keep the original project backed up until this version is tested.
