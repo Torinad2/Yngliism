@@ -489,3 +489,9 @@ footer {
         gap: 6px
     }
 }
+.article img { max-width:100%; height:auto; }
+.article p a,.article li a { text-decoration:underline; text-underline-offset:3px; }
+.article pre { overflow:auto; padding:16px; background:#e7e9dd; }
+.article blockquote { border-left:3px solid var(--gold); margin-left:0; padding-left:20px; color:var(--muted); }
+.library-section { margin-top:55px; }
+.article h1 { overflow-wrap:anywhere; }
