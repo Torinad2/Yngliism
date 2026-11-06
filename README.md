@@ -26,6 +26,6 @@ The output directory is `out`. Cloudflare Pages build command: `npm run build`; 
 
 Add Markdown files to `articles/ru` or `articles/en`. Each file requires YAML frontmatter: `slug`, `title`, `category`, `status: published`. Optional: `description`, `source_url`. Use the same slug for translations. `status: draft` excludes the article from the site. Search covers title, description, category and content.
 
-Routes: `/ru/`, `/en/`, `/ru/articles/`, `/ru/teachings/`, `/ru/timeline/`, `/ru/about/`, `/ru/article/ingliizm-introduction/` (and English equivalents). The root displays language links to `/ru/` and `/en/`.
+Routes: `/ru/`, `/en/`, `/ru/articles/`, `/ru/teachings/`, `/ru/timeline/`, `/ru/about/`, `/ru/article/Yngliizm-introduction/` (and English equivalents). The root displays language links to `/ru/` and `/en/`.
 
 **Note:** This is a static site: each Markdown update requires a new build/deployment. The legacy Vite files and `node_modules` were intentionally excluded. Keep the original project backed up until this version is tested.
