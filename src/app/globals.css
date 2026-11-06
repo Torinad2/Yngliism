@@ -1,5 +1,82 @@
-@import '../../css/style.css';
-.languages a { display: inline-flex; align-items: center; justify-content: center; }
+@import "../../css/style.css";
+.languages a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.languages a { border: 1px solid var(--line); padding: 3px 10px; border-radius: 5px; font-size: 13px; }
-.languages a.active { background: var(--ink); color: var(--paper); }
+.languages a {
+  border: 1px solid var(--line);
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.languages a.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.commandments-intro {
+  line-height: 1.8;
+}
+
+.commandments-intro p {
+  margin-bottom: 1.25rem;
+}
+
+.commandments-intro strong {
+  font-weight: 700;
+}
+
+.commandments-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.commandments-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.commandments-list summary::marker {
+  content: "";
+}
+
+.commandments-list summary::before {
+  content: "▶";
+  font-size: 12px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.commandments-list details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.commandments-list summary::after {
+  content: none;
+}
+
+.commandments-list summary h3 {
+  margin: 0;
+}
+
+details {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+details summary {
+  margin: 0 !important;
+  padding: 4px 0 !important;
+  border: none !important;
+  line-height: 1.4;
+}
+
+details + details {
+  margin-top: 0 !important;
+}

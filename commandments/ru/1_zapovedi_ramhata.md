@@ -1,7 +1,7 @@
 ---
 slug: commandment-01
-title: "Заповеди бога Рамхата"
-description: "Заповеди бога Рамхата"
+title: "Заповеди Рамхата"
+description: "Заповеди Рамхата"
 order: 1
 status: published
 ---
