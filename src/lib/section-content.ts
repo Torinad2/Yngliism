@@ -25,7 +25,7 @@ export function getSectionContent(
   section: ContentSection,
   lang: Language,
 ): ContentItem[] {
-  const dir = path.join(process.cwd(), section, lang);
+  const dir = path.join(process.cwd(), "content", section, lang);
 
   if (!fs.existsSync(dir)) {
     return [];

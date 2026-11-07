@@ -6,6 +6,7 @@ import type { Language } from "@/lib/i18n";
 export function getCommandmentsIntro(lang: Language): string {
   const filePath = path.join(
     process.cwd(),
+    "content",
     "commandments",
     lang,
     "introduction.md",

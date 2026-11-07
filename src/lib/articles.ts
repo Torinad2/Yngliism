@@ -14,7 +14,7 @@ export type Article = {
   source_url?: string;
 };
 
-const root = path.join(process.cwd(), "articles");
+const root = path.join(process.cwd(), "content", "articles");
 
 export function getArticles(lang: Language): Article[] {
   const dir = path.join(root, lang);
