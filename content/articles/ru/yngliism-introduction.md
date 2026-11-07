@@ -112,7 +112,7 @@ status: "published"
 
 **«Слава Богам и Предкам Нашим!»**
 
-![Знамение Славы](/Content/Images/Articles/For_Article_Yngliism_Introductin/1_znamenie_slavy.jpg)
+![Знамение Славы](/content/images/articles/yngliism_introductin/1_znamenie_slavy.jpg)
 
 _Рис. 1. Знамение Славы_
 
@@ -130,7 +130,7 @@ _Рис. 1. Знамение Славы_
 
 - **Оберег межродовой Общины** (рис. 4).
 
-![Обереги — защитные символы](/Content/Images/Articles/For_Article_Yngliism_Introductin/oberegi_2_3_4.jpg)
+![Обереги — защитные символы](/content/images/articles/yngliism_introductin/oberegi_2_3_4.jpg)
 
 _Рис. 2, 3, 4. Обереги — защитные символы_
 
@@ -178,7 +178,7 @@ _Рис. 2, 3, 4. Обереги — защитные символы_
 
 Основным символом Старой Веры Первопредков является **Звезда Инглии**. Согласно вероучению Староверов-Инглингов, она олицетворяет Изначальный Чистый Свет — Первичный Огонь Божественного Творения, сияние Ярилы-Солнца, а также гармоничного Человека, соединяющего в себе Телесное, Духовное и Душевное начала.
 
-![Рис. 5. Звезда Инглии](/Content/Images/Articles/For_Article_Yngliism_Introductin/zvezda_ynglii.png)
+![Рис. 5. Звезда Инглии](/content/images/articles/yngliism_introductin/zvezda_ynglii.png)
 
 _Рис. 5. Звезда Инглии._
 
@@ -232,7 +232,7 @@ _Рис. 5. Звезда Инглии._
 
 Он связывается с сохранением Родовой памяти, культурного наследия и духовных традиций, передаваемых из поколения в поколение.
 
-![Рис. 6–7. Звезда Инглии с Перуницей и Вестником](/Content/Images/Articles/For_Article_Yngliism_Introductin/6_7_zvezda_ynglii.png)
+![Рис. 6–7. Звезда Инглии с Перуницей и Вестником](/content/images/articles/yngliism_introductin/6_7_zvezda_ynglii.png)
 
 _Рис. 6–7. Звезда Инглии с Перуницей и Вестником._
 
@@ -254,7 +254,7 @@ _Рис. 6–7. Звезда Инглии с Перуницей и Вестни�
 
 - **Левая** — коготь Медведя и чётки из Сандалового Древа.
 
-![Рис. 8. Артаконы](/Content/Images/Articles/For_Article_Yngliism_Introductin/8_artakony.jpg)
+![Рис. 8. Артаконы](/content/images/articles/yngliism_introductin/8_artakony.jpg)
 
 _Рис. 8. Артаконы._
 
@@ -266,7 +266,7 @@ _Рис. 8. Артаконы._
 
 Согласно духовным преданиям Староверов-Инглингов, наши Предки повязывали волосы на челе вышитой тесьмой, лентой или кожаным шнуром, именуемым **Берегиней**.
 
-![Рис. 9. Берегиня](/Content/Images/Articles/For_Article_Yngliism_Introductin/9_bereginya.jpg)
+![Рис. 9. Берегиня](/content/images/articles/yngliism_introductin/9_bereginya.jpg)
 
 _Рис. 9. Берегиня — украшенная орнаментом повязка для волос._
 
@@ -582,7 +582,7 @@ _Рис. 9. Берегиня — украшенная орнаментом по�
 
 Согласно традиции Староверов-Инглингов, каждый элемент такой вязи несёт определённый Образ и символически связывает человека с Родными Богами, Предками и Матерью-Природой.
 
-![Обереговая вязь](/Content/Images/Articles/For_Article_Yngliism_Introductin/oberegovaya_vyaz.jpg)
+![Обереговая вязь](/content/images/articles/yngliism_introductin/oberegovaya_vyaz.jpg)
 
 _Рис. 1. Обереговая вязь._
 
@@ -602,7 +602,7 @@ _Рис. 1. Обереговая вязь._
 
 В духовной традиции Староверов-Инглингов особое значение имеет орнаментальная вязь, объединяющая Огненные Образы **Коловрата** и **Перунова Цвета**.
 
-![Фрагмент пояса Жреца Перуна](/Content/Images/Articles/For_Article_Yngliism_Introductin/muzhskoj_poyas_zhrec_peruna.jpg)
+![Фрагмент пояса Жреца Перуна](/content/images/articles/yngliism_introductin/muzhskoj_poyas_zhrec_peruna.jpg)
 
 _Рис. 2. Фрагмент мужского пояса Жреца Бога Перуна._
 
@@ -618,7 +618,7 @@ _Рис. 2. Фрагмент мужского пояса Жреца Бога П�
 
 В традиции Староверов-Инглингов подобные изображения рассматриваются как носители духовных Образов, раскрывающих представления о Мироздании и месте человека в нём.
 
-![Рубаха, доска и чаша](/Content/Images/Articles/For_Article_Yngliism_Introductin/rubaha_doska_chasha.jpg)
+![Рубаха, доска и чаша](/content/images/articles/yngliism_introductin/rubaha_doska_chasha.jpg)
 
 _Рис. 3. Рубаха, разделочная доска и чаша с орнаментами._
 
