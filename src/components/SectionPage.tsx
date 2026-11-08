@@ -60,14 +60,12 @@ export default function SectionPage({
           <div
             className="art"
             role="img"
-            aria-label={lang === "ru" ? "Солнце и холмы" : "Sun and hills"}
-          >
-            <div className="sun" />
-            <div className="hill second" />
-            <div className="hill" />
-            <div className="hill third" />
-            <div className="art-label">{t.art}</div>
-          </div>
+            aria-label={
+              lang === "ru"
+                ? "Древнерусская деревня, деревянные дома и солнце"
+                : "Ancient Russian village, wooden houses and sun"
+            }
+          ></div>
         </section>
       )}
 

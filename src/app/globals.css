@@ -52,7 +52,8 @@ button {
 /* Шапка сайта: логотип, меню и языки в одной строке. */
 /* Site header with brand, navigation, and language selector. */
 header {
-  max-width: 1320px;
+  /*max-width: 1320px;*/
+  max-width: 80%;
   margin: auto;
   padding: 25px 5%;
   display: flex;
@@ -126,7 +127,8 @@ nav a[aria-current] {
 /* Основной контейнер с ограничением ширины и боковыми отступами. */
 /* Centered main container with a maximum width. */
 main {
-  max-width: 1180px;
+  /* max-width: 1180px; */
+  max-width: 75%;
   margin: auto;
   padding: 0 28px;
 }
@@ -193,81 +195,22 @@ p.intro {
   background: #415d50;
 }
 
-/* Арочный контейнер пейзажа. overflow скрывает выступающие части холмов. */
-/* Arched landscape container; clip overflowing shapes. */
+/* Контейнер иллюстрации */
 .art {
-  height: 390px;
   position: relative;
-  overflow: hidden;
-  border-radius: 48% 48% 3px 3px;
-  background: #e7e8d9;
-  border: 1px solid #d6dacb;
-}
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
 
-/* Внутренняя рамка пейзажа через псевдоэлемент, без дополнительного HTML. */
-/* Decorative inner border without extra HTML. */
-.art:before {
-  content: "";
-  position: absolute;
-  inset: 23px;
-  border: 1px solid #bfc9b7;
-  border-radius: 48% 48% 0 0;
-}
+  background-image: url("/content/images/main_page/village2.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 
-/* Солнце: круг с абсолютным позиционированием внутри пейзажа. */
-/* Sun positioned inside the landscape. */
-.sun {
-  position: absolute;
-  width: 105px;
-  height: 105px;
-  border-radius: 50%;
-  background: #d2b784;
-  top: 80px;
-  left: calc(50% - 52px);
-}
+  border: none;
+  border-radius: 0;
 
-/* Базовый холм: повёрнутый овал, частично скрытый контейнером. */
-/* Base hill, partly clipped by its container. */
-.hill {
-  position: absolute;
-  width: 700px;
-  height: 320px;
-  border-radius: 50%;
-  bottom: -220px;
-  left: -220px;
-  background: #687d64;
-  transform: rotate(20deg);
-}
-
-/* Положение, цвет и наклон второго холма. */
-/* Second hill position, color, and rotation. */
-.hill.second {
-  bottom: -180px;
-  left: 60px;
-  background: #9aaa87;
-  transform: rotate(-20deg);
-}
-
-/* Тёмный холм на переднем плане. */
-/* Dark foreground hill. */
-.hill.third {
-  bottom: -235px;
-  left: -80px;
-  background: #344f43;
-  transform: rotate(-8deg);
-}
-
-/* Подпись поверх холмов. z-index задаёт порядок наложения. */
-/* Landscape caption positioned above the hills. */
-.art-label {
-  position: absolute;
-  bottom: 28px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font: italic 18px Georgia;
-  color: #f2efe4;
-  z-index: 2;
+  box-sizing: border-box;
 }
 
 /* Заголовок библиотеки и поиск по разным краям строки. */
@@ -402,7 +345,8 @@ h2 {
 /* Site footer with top divider. */
 footer {
   border-top: 1px solid var(--line);
-  max-width: 1180px;
+  /* max-width: 1180px; */
+  max-width: 75%;
   margin: auto;
   padding: 24px 28px 35px;
   display: flex;
