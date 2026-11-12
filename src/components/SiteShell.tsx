@@ -1,41 +1,53 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 
 import {
   copy,
   languages,
-  routes,
+  navRoutes,
   sectionUrl,
   type Language,
   type Section,
 } from "@/lib/i18n";
 
+// RU: Свойства основного компонента сайта.
+// EN: Properties of the main website component.
 type SiteShellProps = {
   lang: Language;
-  active: Section | "article";
-  children: React.ReactNode;
-  alternate?: string;
+  active: Section;
+  children: ReactNode;
 };
 
-export default function SiteShell({
-  lang,
-  active,
-  children,
-  alternate,
-}: SiteShellProps) {
+// RU: Основной компонент сайта: шапка, меню, контент и футер.
+// EN: Main website component: header, navigation, content, and footer.
+export default function SiteShell({ lang, active, children }: SiteShellProps) {
+  // RU: Получаем переводы интерфейса для выбранного языка.
+  // EN: Get interface translations for the selected language.
   const t = copy[lang];
 
   return (
     <>
-      {/* Site header */}
+      {/* RU: Шапка сайта. */}
+      {/* EN: Website header. */}
       <header>
-        {/* Website logo */}
-        <Link className="brand" href={`/${lang}/`}>
+        {/* RU: Логотип со ссылкой на главную страницу. */}
+        {/* EN: Website logo linking to the home page. */}
+        <Link className="brand" href={sectionUrl(lang, "home")}>
           YNG<span>LIISM</span>
         </Link>
 
-        {/* Main navigation */}
-        <nav aria-label={lang === "ru" ? "Основное меню" : "Main navigation"}>
-          {routes.map((route, i) => (
+        {/* RU: Главное меню: Главная и Заповеди. */}
+        {/* EN: Main navigation: Home and Commandments. */}
+        <nav
+          aria-label={
+            lang === "ru"
+              ? "Основное меню"
+              : lang === "es"
+                ? "Navegación principal"
+                : "Main navigation"
+          }
+        >
+          {navRoutes.map((route, i) => (
             <Link
               key={route}
               href={sectionUrl(lang, route)}
@@ -46,29 +58,35 @@ export default function SiteShell({
           ))}
         </nav>
 
-        {/* Language switcher */}
+        {/* RU: Переключатель языков: RU, EN, ES. */}
+        {/* EN: Language switcher: RU, EN, ES. */}
         <div className="languages">
-          {languages.map((l) => (
-            <Link
-              key={l}
-              href={
-                alternate
-                  ? `/${l}/article/${encodeURIComponent(alternate)}/`
-                  : sectionUrl(l, active === "article" ? "articles" : active)
-              }
-              className={l === lang ? "active" : ""}
-              hrefLang={l}
-            >
-              {l.toUpperCase()}
-            </Link>
-          ))}
+          {languages.map((language) => {
+            // RU: Сохраняем текущий раздел при смене языка.
+            // EN: Preserve the current section when switching languages.
+            const href = sectionUrl(language, active);
+
+            return (
+              <Link
+                key={language}
+                href={href}
+                className={language === lang ? "active" : ""}
+                hrefLang={language}
+                aria-current={language === lang ? "page" : undefined}
+              >
+                {language.toUpperCase()}
+              </Link>
+            );
+          })}
         </div>
       </header>
 
-      {/* Main page content */}
+      {/* RU: Основное содержимое текущей страницы. */}
+      {/* EN: Main content of the current page. */}
       <main id="main">{children}</main>
 
-      {/* Site footer */}
+      {/* RU: Нижняя часть сайта. */}
+      {/* EN: Website footer. */}
       <footer>
         <span>{t.footer}</span>
         <span>{t.footer2}</span>

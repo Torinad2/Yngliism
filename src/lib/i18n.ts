@@ -1,141 +1,89 @@
-// Supported website languages
-export const languages = ["ru", "en"] as const;
+//
+// RU: Поддерживаемые языки сайта.
+// EN: Supported website languages.
+//
+export const languages = ["ru", "en", "es"] as const;
 
 export type Language = (typeof languages)[number];
 
-// Available website sections
-export const routes = [
-  "home",
-  "teachings",
-  "commandments",
-  "articles",
-  "library",
-  "timeline",
-  "about",
-] as const;
+//
+// RU: Доступные разделы сайта.
+// EN: Available website sections.
+//
+export const routes = ["home", "commandments"] as const;
 
 export type Section = (typeof routes)[number];
 
-// Website translations
+//
+// RU: Разделы главного меню.
+// EN: Main navigation sections.
+//
+export const navRoutes = routes;
+
+//
+// RU: Переводы интерфейса сайта.
+// EN: Website interface translations.
+//
 export const copy = {
   ru: {
-    nav: [
-      "Главная",
-      "Учение",
-      "Заповеди",
-      "Статьи",
-      "Библиотека",
-      "История",
-      "О проекте",
-    ],
+    // RU: Главное меню.
+    // EN: Main navigation.
+    nav: ["Главная", "Заповеди"],
 
+    // RU: Главная страница.
+    // EN: Home page.
     eye: "Открытая библиотека",
 
     intro:
       "Знакомьтесь с идеями, изучайте источники и находите ответы на свои вопросы. В своём темпе, с вниманием к деталям.",
 
-    explore: "Открыть библиотеку ↗",
-
-    art: "Знание начинается с вопроса",
-
-    library: "Исследуйте библиотеку",
-
-    sub: "Начните с темы, которая вам близка.",
-
-    search: "Поиск по статьям…",
-
-    read: "Читать статью ↗",
-
-    about: "О проекте",
-
-    aboutText:
-      "Yngliism — открытая библиотека. Здесь можно постепенно собирать статьи, первоисточники и иллюстрации на нескольких языках. Для материалов указываются источники.",
-
+    // RU: Нижняя часть сайта.
+    // EN: Website footer.
     footer: "Библиотека знаний",
-
-    footer2: "Русский / English · Без регистрации",
-
-    back: "← К библиотеке",
-
-    empty: "Статьи не найдены.",
-
-    section: "Раздел библиотеки",
-
-    history: "Исторические материалы",
-
-    missing: "Статья не найдена или ещё не переведена на русский язык.",
-
-    source: "Источник",
+    footer2: "Русский / English / Español · Без регистрации",
   },
 
   en: {
-    nav: [
-      "Home",
-      "Teachings",
-      "Commandments",
-      "Articles",
-      "Library",
-      "History",
-      "About",
-    ],
+    // RU: Главное меню.
+    // EN: Main navigation.
+    nav: ["Home", "Commandments"],
 
+    // RU: Главная страница.
+    // EN: Home page.
     eye: "An open library",
 
     intro:
       "Explore ideas, read sources, and find answers to your questions. At your own pace, with attention to detail.",
 
-    explore: "Explore the library ↗",
-
-    art: "Knowledge begins with a question",
-
-    library: "Explore the library",
-
-    sub: "Begin with a topic that speaks to you.",
-
-    search: "Search articles…",
-
-    read: "Read article ↗",
-
-    about: "About the project",
-
-    aboutText:
-      "Yngliism is an open library. It can hold a growing collection of articles, source documents, and illustrations in multiple languages. Sources are provided for library materials.",
-
+    // RU: Нижняя часть сайта.
+    // EN: Website footer.
     footer: "A library of knowledge",
+    footer2: "Русский / English / Español · No registration",
+  },
 
-    footer2: "Русский / English · No registration",
+  es: {
+    // RU: Главное меню.
+    // EN: Main navigation.
+    nav: ["Inicio", "Mandamientos"],
 
-    back: "← Back to library",
+    // RU: Главная страница.
+    // EN: Home page.
+    eye: "Una biblioteca abierta",
 
-    empty: "No articles found.",
+    intro:
+      "Explora ideas, consulta fuentes y encuentra respuestas a tus preguntas. A tu propio ritmo y con atención a los detalles.",
 
-    section: "Library section",
-
-    history: "Historical materials",
-
-    missing: "Article not found or not yet translated into English.",
-
-    source: "Source",
+    // RU: Нижняя часть сайта.
+    // EN: Website footer.
+    footer: "Una biblioteca de conocimiento",
+    footer2: "Русский / English / Español · Sin registro",
   },
 } as const;
 
-// Return a localized article category name
-export function categoryLabel(category: string, lang: Language) {
-  const names: Record<string, [string, string]> = {
-    teachings: ["Учение", "Teachings"],
-    history: ["История", "History"],
-    articles: ["Статьи", "Articles"],
-  };
-
-  return names[category]?.[lang === "ru" ? 0 : 1] ?? category;
-}
-
-// Generate a localized section URL
-export function sectionUrl(lang: Language, section: Section) {
+//
+// RU: Формируем URL раздела для выбранного языка.
+// EN: Generate a section URL for the selected language.
+//
+export function sectionUrl(lang: Language, section: Section): string {
   return `/${lang}/${section === "home" ? "" : `${section}/`}`;
-}
-
-// Generate a localized article URL
-export function articleUrl(lang: Language, slug: string) {
-  return `/${lang}/article/${encodeURIComponent(slug)}/`;
 }

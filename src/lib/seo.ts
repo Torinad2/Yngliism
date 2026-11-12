@@ -1,71 +1,80 @@
 import type { Metadata } from "next";
-import { getArticles } from "./articles";
+
 import { languages, type Language, type Section } from "./i18n";
 
+// RU: Основной адрес сайта.
+// EN: Main website URL.
 export const siteUrl = "https://yngliism.com";
 
+// RU: Названия доступных разделов на всех языках.
+// EN: Names of available sections in all languages.
 export const sectionNames: Record<Language, Record<Section, string>> = {
   ru: {
     home: "Главная",
-    teachings: "Учение",
     commandments: "Заповеди",
-    articles: "Статьи",
-    library: "Библиотека",
-    timeline: "История",
-    about: "О проекте",
   },
+
   en: {
     home: "Home",
-    teachings: "Teachings",
     commandments: "Commandments",
-    articles: "Articles",
-    library: "Library",
-    timeline: "History",
-    about: "About",
+  },
+
+  es: {
+    home: "Inicio",
+    commandments: "Mandamientos",
   },
 };
 
-export function sectionPath(lang: Language, section: Section) {
+// RU: Формируем URL раздела на выбранном языке.
+// EN: Generate a localized section URL.
+export function sectionPath(lang: Language, section: Section): string {
   return `/${lang}/${section === "home" ? "" : `${section}/`}`;
 }
 
+// RU: Генерируем SEO-метаданные для страницы.
+// EN: Generate SEO metadata for a page.
 export function localizedMetadata(lang: Language, section: Section): Metadata {
-  const path = sectionPath(lang, section);
+  // RU: Получаем путь и заголовок текущей страницы.
+  // EN: Get the current page path and title.
+  const pagePath = sectionPath(lang, section);
   const title = sectionNames[lang][section];
 
+  // RU: Формируем описание на выбранном языке.
+  // EN: Generate a description in the selected language.
   const description =
     lang === "ru"
       ? `Yngliism — ${title.toLowerCase()}. Материалы, знания и источники.`
-      : `Yngliism — ${title}. Materials, knowledge, and sources.`;
+      : lang === "es"
+        ? `Yngliism — ${title}. Materiales, conocimientos y fuentes.`
+        : `Yngliism — ${title}. Materials, knowledge, and sources.`;
+
+  // RU: Настройки языка для Open Graph.
+  // EN: Language locale settings for Open Graph.
+  const locale = lang === "ru" ? "ru_RU" : lang === "es" ? "es_ES" : "en_US";
 
   return {
     title,
     description,
 
+    // RU: Канонический адрес и языковые альтернативы.
+    // EN: Canonical URL and language alternatives.
     alternates: {
-      canonical: path,
+      canonical: pagePath,
+
       languages: Object.fromEntries(
-        languages.map((l) => [l, sectionPath(l, section)]),
+        languages.map((language) => [language, sectionPath(language, section)]),
       ),
     },
 
+    // RU: Метаданные для отображения ссылок в социальных сетях.
+    // EN: Metadata for social media link previews.
     openGraph: {
       title: `${title} · Yngliism`,
       description,
-      url: path,
+      url: pagePath,
       siteName: "Yngliism",
-      locale: lang === "ru" ? "ru_RU" : "en_US",
+      locale,
       type: "website",
     },
   };
-}
-
-export function articleAlternates(slug: string) {
-  return Object.fromEntries(
-    languages
-      .filter((lang) =>
-        getArticles(lang).some((article) => article.slug === slug),
-      )
-      .map((lang) => [lang, `/${lang}/article/${slug}/`]),
-  );
 }
